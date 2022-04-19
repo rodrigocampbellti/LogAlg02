@@ -11,10 +11,9 @@
     <div id="output"></div>
     <script>
      /// inserir primeiro o Nome completo
-     var nomeDo = prompt ('insira o nome aqui');
+     var nome = prompt ('insira o nome aqui');
 
-     ///Inserir o salário em reais usando ponto para os valores em milhar
-     var tempo = prompt ('tempo de serviço');
+     var tempo = parseInt(prompt ('tempo de serviço em meses'));
 
      var salario =  parseFloat(prompt('salário médio'));
     ///inserir apenas os anos da idade
@@ -26,13 +25,15 @@
      
      var inss = 0
 
-if (tempo>11) { 
+if (tempo>12) { 
     abonoSalarial = salario *10/100;
     abonoSalarial = abonoSalarial + idade
 }
+
 else {
     abonoSalarial = idade;
  }
+abonoSalarial = abonoSalarial + idade
 
 salarioFinal = salario + abonoSalarial
 
@@ -41,7 +42,7 @@ else if(salarioFinal>1500 && salarioFinal<=2500){inss = salarioFinal*10/100}
 else if(salarioFinal>2500 && salarioFinal<=3500){inss = salarioFinal*13/100}
 else if(salarioFinal>3500){inss = salarioFinal*15/100};
 
-    output.innerHTML= `Nome: ${nomeDo}<br> Tempo de serviço: ${tempo}<br> Salario medio: ${salario} <br> Idade do funcionario: ${idade} <br> <hr> Abono salaria: ${abonoSalarial}<br> Próximo salario ${salarioFinal}<br> ${inss}`;
+    output.innerHTML= `Nome: ${nome}<br> Tempo de serviço: ${tempo}<br> Salario medio: ${salario} <br> Idade do funcionario: ${idade} <br> <hr> Abono salaria: ${abonoSalarial}<br> Próximo salario ${salarioFinal}<br> ${inss}`;
 
 
     </script>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="André Luferat - https://github.com/Luferat/">
+    <title>Atividade 1.2</title>
+</head>
+
+<body>
+
+<!-- 
+    IMPORTANTE!
+        • Esta atividade pressupõe que você tenha conhecimentos básicos de HTML5 e de JavaScript.
+        • Todos os elementos essenciais para o funcionamento do programa estão identificados (id="").
+        • Localize estas identificações antes de prosseguir.
+        • O algoritmo para execução da atividade está dentro da tag <script>...</script>.
+        • As instruções do algoritmo estão numeradas na ordem sugerida para execução, mas, 
+        não é obrigatório seguir esta ordem.
+-->
+
+    <h3>Abono salarial:</h3>
+
+    <table>
+
+        <tr>
+            <td>Nome do funcionário:</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+
+        <tr>
+            <td>Meses de serviço:</td>
+            <td><input type="number" id="serviceTime"></td>
+        </tr>
+
+        <tr>
+            <td>Salário médio:</td>
+            <td><input type="number" id="averagePay"></td>
+        </tr>
+
+        <tr>
+            <td>Anos de idade:</td>
+            <td><input type="number" id="age"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>Clique para calcular &rarr;</td>
+            <td><button id="btnCalc">Calcular</button></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <hr>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Abono salarial:</td>
+            <td><input type="number" id="allowance" readonly></td>
+        </tr>
+
+        <tr>
+            <td>Próximos salários:</td>
+            <td><input type="number" id="nextPay" readonly></td>
+        </tr>
+
+        <tr>
+            <td>Contribuição INSS:</td>
+            <td><input type="number" id="inss" readonly></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>Clique para gerar lista &rarr;</td>
+            <td><button id="btnRel">Gerar relatório</button></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <hr>
+            </td>
+        </tr>
+
+        <tr>
+            <th colspan="2">Relatório</th>
+        </tr>
+
+        <tr>
+            <td colspan="2" id="relOutput"></td>
+        </tr>
+
+    </table>
+
+    <script>
+
+        /**
+         * 1) Ao clicar no botão [Calcular], inicia-se o aplicativo.
+         *    O aplicativo está dentro da 'Função sem nome', executada ao clicar no botão.
+         */
+        btnCalc.onclick = function () {
+
+            /**
+             * 2) Crie as variáveis contendo todos os dados do funcionário.
+             *    Obténha dados digitados nos campos e armazene nas variáveis.
+             *    Faça as conversões 'string → número' quando necessário.
+             */
+            var name = employeeName.value;
+            var serviceTime = parseInt(serviceTime.value);
+            var averagePay = parseFloat(averagePay.value);
+            var age = parseFloat(age.value);
+
+            console.log(name, serviceTime, averagePay, age);
+            /**
+             * 3) Crie uma variável para armazenar o abono salarial do funcionário.
+             *    Calcule o abono salarial do funcionário, com base no tempo de serviço e na idade.
+             *    Armazene na variável.
+             */
+             var abono = 0;
+
+             if(serviceTime > 12)
+             abono = averagePay * 10/100;
+
+             abono += age;
+            /**
+             * 4) Crie uma variável para armazenar o valor do novo salário.
+             *    Calcule o valor do novo salário.
+             *    Armazene na variável.
+             */
+             var newWage = averagePay + abono 
+
+            /**
+             * 5) Crie uma variável para armazenar o valor da contribuição ao INSS.
+             *    Calcule o valor da contribuição ao INSS sobre o valor do novo salário.
+             *    Use a tabela de referência.
+             *    Armazene na variável.
+             */
+
+            /**
+             * 6) Exiba o valor das variáveis 3, 4 e 5 nos campos 'readonly' do formulário.
+             */
+
+            /**
+             * 7) Ao clicar no botão [Gerar relatório], execute a 'Função sem nome'.
+             */
+            btnRel.onclick = function () {
+
+                /**
+                 * 8) Crie uma variável contendo um relatório simples com todos os dados 
+                 *    do funcionário e os resultados dos cálculos.
+                 */
+
+                /**
+                 * 9) Exiba o conteúdo da variável com o relatório, no 'innerHTML' do elemento 'id="relOutput"'.
+                 */
+
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -9,10 +9,16 @@
 <body>
     <script>
 
-    var number1 = prompt ('insira aqui numero 2')
-    var number2 = prompt ('insira aqui numero 4')   
+    var number1 = parseFloat(prompt ('insira aqui numero 2'));
+    var number2 = parseFloat(prompt ('insira aqui numero 4'));   
+ 
+    console.log(number1, number2);
+
+    console.log(number1 + number2);
+
+    document.write(`O resultado da soma entre ${number1} e ${number2} é ${number1 + number2}.`);
     
-    document.write("O resultado da subtração de 2 e 4 é -2");
+    document.write(`O resultado da subtração entre ${number1} e ${number2} é ${number1 - number2}.`);
     </script>
     
 </body>
