@@ -10,7 +10,7 @@
 
 <body>
 
-<!-- 
+    <!-- 
     IMPORTANTE!
         • Esta atividade pressupõe que você tenha conhecimentos básicos de HTML5 e de JavaScript.
         • Todos os elementos essenciais para o funcionamento do programa estão identificados (id="").
@@ -26,7 +26,7 @@
 
         <tr>
             <td>Nome do funcionário:</td>
-            <td><input type="text" id="name"></td>
+            <td><input type="text" id="employeeName"></td>
         </tr>
 
         <tr>
@@ -113,28 +113,31 @@
              *    Faça as conversões 'string → número' quando necessário.
              */
             var name = employeeName.value;
-            var serviceTime = parseInt(serviceTime.value);
-            var averagePay = parseFloat(averagePay.value);
-            var age = parseFloat(age.value);
+            var tempo = parseInt(serviceTime.value);
+            var salarioMedio = parseFloat(averagePay.value);
+            var idade = parseInt(age.value);
 
-            console.log(name, serviceTime, averagePay, age);
+            console.log(name, tempo, salarioMedio, idade);
             /**
              * 3) Crie uma variável para armazenar o abono salarial do funcionário.
              *    Calcule o abono salarial do funcionário, com base no tempo de serviço e na idade.
              *    Armazene na variável.
              */
-             var abono = 0;
+             var abono = 0
 
-             if(serviceTime > 12)
-             abono = averagePay * 10/100;
+             if(tempo > 12){
+             abono = salarioMedio*10/100+idade;
+             }
+             else (tempo<=12)
+             abono += idade;
+             
 
-             abono += age;
             /**
              * 4) Crie uma variável para armazenar o valor do novo salário.
              *    Calcule o valor do novo salário.
              *    Armazene na variável.
              */
-             var newWage = averagePay + abono 
+             var novoSalario = salarioMedio + abono;
 
             /**
              * 5) Crie uma variável para armazenar o valor da contribuição ao INSS.
@@ -142,11 +145,28 @@
              *    Use a tabela de referência.
              *    Armazene na variável.
              */
+            var inssContri = 0
 
+            if(novoSalario<=1500){
+            inssContri = novoSalario*5/100
+                
+            }
+            else if (novoSalario<=2500){
+                inssContri = novoSalario*10/100
+            }
+
+            else if(novoSalario<=3500){
+                inssContri = novoSalario*13/100
+            }
+            else (novoSalario>3500)
+                inssContri = novoSalario*15/100
+            
             /**
              * 6) Exiba o valor das variáveis 3, 4 e 5 nos campos 'readonly' do formulário.
              */
-
+            allowance.value = abono;
+            nextPay.value = novoSalario;
+            inss.value = inssContri;
             /**
              * 7) Ao clicar no botão [Gerar relatório], execute a 'Função sem nome'.
              */
