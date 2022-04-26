@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(A/RE)provados</title>
+    <style>
+        * {
+            font-family: monospace;
+        }
+        input {
+            text-align: right;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Atividade 1.2</h2>
+    <p>Crie os scripts necessários para fazer a calculadora abaixo funcionar.</p>
+    <ol>
+        <li>O usuário digita o nome do(a) aluno(a);</li>
+        <li>O usuário digita as notas do 1º e 2º bimestres;</li>
+        <li>O usuário clica em [Calcular média];</li>
+        <li>A média dos bimestres aparece na "Média 1º semestre:";</li>
+        <li>O usuário digita as notas do 3º e 4º bimestres;</li>
+        <li>O usuário clica em [Calcular média];</li>
+        <li>A média final entre o 1º semestre e o 2º semestre aparece na "Média final:";</li>
+        <li>A mensão do(a) aluno(a) aparece em "Mensão final:";</li>
+        <ul>
+            <li>Se a média final for menor que 5, a mensão será "reprovado";</li>
+            <li>Caso contrário, será aprovado.</li>
+        </ul>
+    </ol>
+
+    <hr>
+
+    <table>
+        <tr>
+            <td>Nome do aluno:</td>
+            <td><input type="text" id="nome" style="width: 100%; text-align: left" autocomplete="off"></td>
+        </tr>
+        <tr>
+            <td>Nota 1º bimestre:</td>
+            <td><input type="number" id="bin1" min="0" max="10"> 0 à 10</td>
+        </tr>
+        <tr>
+            <td>Nota 2º bimestre:</td>
+            <td><input type="number" id="bin2" min="0" max="10"> 0 à 10</td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <button id="cal1sem">Calcular média</button>
+            </th>
+        </tr>
+        <tr>
+            <td>Média 1º semestre:</td>
+            <td><input type="number" id="sem1" min="0" max="10" readonly></td>
+        </tr>
+        <tr>
+            <td colspan="2"><hr></td>
+        </tr>
+        <tr>
+            <td>Nota 3º bimestre:</td>
+            <td><input type="number" id="bin3" min="0" max="10"> 0 à 10</td>
+        </tr>
+        <tr>
+            <td>Nota 4º bimestre:</td>
+            <td><input type="number" id="bin4" min="0" max="10"> 0 à 10</td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <button id="cal2sem">Calcular média</button>
+
+            </th>
+        </tr>
+         <tr>
+            <td>Média final:</td>
+            <td><input type="number" id="final" min="0" max="10" readonly></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><hr></td>
+        </tr>
+
+        <tr>
+            <td>Mensão final:</td>
+            <td><input  type="text" id="mensao" readonly placeholder="reprovado" style="text-align: center;"></td>
+        </tr>
+
+    </table>
+<script>
+
+
+ cal1sem.onclick = function(){
+
+sem1.value = (parseFloat(bin1.value) + parseFloat(bin2.value)) / 2;
+};
+
+cal2sem.onclick = function(){
+
+ final.value = (parseFloat(bin1.value) + parseFloat(bin2.value) + parseFloat(bin3.value) + parseFloat(bin4.value)) /4;
+
+if (final.value < 5){
+    mensao.value = ("reprovado")
+}
+else {
+    mensao.value = ("Aprovado")
+};
+};
+
+</script>
+</body>
+
+</html>
